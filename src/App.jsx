@@ -1,24 +1,36 @@
-import React from 'react'
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./Home";
+import Login from "./Login";
+import Signup from "./Signup";
+import { ThemeProvider, useTheme } from "./ThemeContext";
 import './App.css'
-import {BrowserRouter,Routes,Route} from 'react-router-dom'
-import Home from './Home'
-import Login from './Login'
-import Signup from './Signup'
 
-
-function App() {
+function Theme() {
+  const { theme } = useTheme();
 
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/'element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
-        </Routes>
-      </BrowserRouter>
-    </>
-  )
+    <div className={theme}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <>
+      <ThemeProvider>
+        <BrowserRouter>
+          <Theme />
+        </BrowserRouter>
+      </ThemeProvider>
+    </>
+  );
+}
+
+export default App;

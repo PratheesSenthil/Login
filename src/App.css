@@ -1,0 +1,10 @@
+
+.light{
+    background-color: white;
+    color: black;
+}
+
+.dark{
+    background-color: rgb(59, 58, 58);
+    color: white;
+}
