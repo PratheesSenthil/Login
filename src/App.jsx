@@ -7,6 +7,7 @@ import Signup from "./Signup";
 import { ThemeProvider, useTheme } from "./ThemeContext";
 import Navbar from "./Navbar";
 import './App.css'
+import Getapi from "./Getapi";
 
 function Theme() {
   const { theme } = useTheme();
@@ -18,6 +19,8 @@ function Theme() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/getapi" element={<Getapi />} />
+        <Route path="/getapi/:id" element={<Getapi />} />
       </Routes>
     </div>
   );
