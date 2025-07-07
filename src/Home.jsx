@@ -3,9 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function Home() {
-  const navigate = useNavigate();
   
-
   const [logged, setLogged] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -19,12 +17,6 @@ export default function Home() {
     }
   }, []);
 
-  const logout = () => {
-    localStorage.setItem("logged", false);
-    setLogged(false);       
-    setUser(null);
-  };
-
   return (
     <div style={{ padding: "50px", marginLeft: "10px" }}>
       <h1>Home Page</h1>
@@ -35,7 +27,7 @@ export default function Home() {
         </>
       ) : (
         <>
-          <h1>Hello, {user?.username}</h1>
+          <h1>Hello, {user.username}</h1>
         </>
       )}
 

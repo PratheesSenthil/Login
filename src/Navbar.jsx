@@ -11,7 +11,6 @@ export default function Navbar(){
      useEffect(() => {
        const isLoggedIn = JSON.parse(localStorage.getItem("logged"));
        const storedUser = JSON.parse(localStorage.getItem("user"));
-     console.log(isLoggedIn);
      
        if (isLoggedIn && storedUser) {
          setLogged(true);
@@ -20,8 +19,7 @@ export default function Navbar(){
      }, []);
 
    
-     const logout = () => {
-        
+     const logout = () => {    
        localStorage.setItem("logged", false);
        setLogged(false);       
        setUser(null);
@@ -33,7 +31,7 @@ export default function Navbar(){
           <div><NavLink to='/'>Home</NavLink></div>
           <div><NavLink to='/Login' onClick={logout}>{!logged?("Login"):("Logout")}</NavLink></div>
           <div><NavLink to='/signup'>Signup</NavLink></div>
-          <div><NavLink to='/Getapi' >Get Details</NavLink></div>
+          <div><NavLink to='/getapi' >Get Details</NavLink></div>
           <button onClick={toggletheme}>Change Theme</button>
         </div>
     )
