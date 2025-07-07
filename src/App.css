@@ -8,3 +8,26 @@
     background-color: rgb(59, 58, 58);
     color: white;
 }
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* text-decoration: none; */
+    font-family: 'Times New Roman', Times, serif;
+}
+.navbar>div{
+
+    margin-top: 15px;
+}
+.navbar a {
+  text-decoration: none;
+  font-size:x-large;
+  color: inherit; /* inherit from .light or .dark */
+}
+.navbar a:hover{
+    color: rgb(115, 196, 196);
+}
+.navbar>button{
+    cursor: pointer;
+    margin-top: 15px;
+}

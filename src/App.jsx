@@ -5,6 +5,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Signup from "./Signup";
 import { ThemeProvider, useTheme } from "./ThemeContext";
+import Navbar from "./Navbar";
 import './App.css'
 
 function Theme() {
@@ -12,6 +13,7 @@ function Theme() {
 
   return (
     <div className={theme}>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
