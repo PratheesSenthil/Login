@@ -13,7 +13,8 @@ export default function Login(){
         e.preventDefault(); 
         if((Details.email===Username||Details.username===Username)&& Details.password===UserPassword ){
             localStorage.setItem("logged",true)
-             navigate('/')
+            navigate('/')
+            window.location.reload();
         }
         else{
             alert("Username or password is wrong")
