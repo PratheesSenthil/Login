@@ -26,7 +26,30 @@ export default function Getapi() {
       {error ? (
         error
       ) : data ? (
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        <div className="cards">
+          <table>
+            <thead style={{fontSize:'large',fontWeight:'bolder'}}>
+              <tr>
+                <td>User Id</td>
+                <td>Id</td>
+                <td>Title</td>
+                <td>Completion status</td>
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((item,key)=>(
+
+                <tr>
+                  <td>{item.userId}</td>
+                  <td>{item.id}</td>
+                  <td>{item.title}</td>
+                  <td>{item.completed?(<><button style={{backgroundColor:'lightgreen',borderRadius:'5px'}}>Completed</button></>):(<><button style={{backgroundColor:'rgb(242, 116, 116)',borderRadius:'5px'}}>Incomplete</button></>)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          
+        </div>
       ) : (
         <p>Loading Data...</p>
       )}
