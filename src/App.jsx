@@ -20,7 +20,6 @@ function Theme() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/getapi" element={<Getapi />} />
-        <Route path="/getapi/:id" element={<Getapi />} />
       </Routes>
     </div>
   );
